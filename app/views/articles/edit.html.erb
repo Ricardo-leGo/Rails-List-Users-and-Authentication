@@ -1,5 +1,7 @@
-<h1>Edit article</h1>
-
+<% if user_signed_in? %>
+<h1>Edita este Usuario</h1>
 <%= render 'formulario' %>
-
-<%= link_to 'Back', articles_path %>
+<%else %>
+     <h2>Pagina no encontrada</h2>
+<%end%>
+<%= link_to 'Atras', articles_path %>
