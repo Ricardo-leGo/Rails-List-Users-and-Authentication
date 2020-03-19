@@ -1,54 +1,29 @@
 <% debug @reference%>
 
-<%if !@reference== '' %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @reference.title%>
+<p class="showalone">
+    <strong>Nombre o Razón Social:</strong>
+    <%= @article.nrz%>
 </p>
- 
-<p>
-  <strong>"Nombre o Razón Social":</strong>
-  <%= @reference.nrz%>
+<p class="showalone">
+    <strong>RFC:</strong>
+    <%= @article.rfc%>
 </p>
-<p>
-  <strong>"RFC":</strong>
-  <%= @reference.rfc%>
+<p class="showalone">
+    <strong>Email:</strong>
+    <%= @article.email%>
 </p>
-<p>
-  <strong>"Email":</strong>
-  <%= @reference.email%>
-</p>
-<p>
-  <strong>"Usuario de contacto":</strong>
-  <%= @reference.contactuser%>
-</p>
-<% else %>
-<p>
-  <strong>Title:</strong>
-  <%= @article.title%>
-</p>
- 
-<p>
-  <strong>"Nombre o Razón Social":</strong>
-  <%= @article.nrz%>
-</p>
-<p>
-  <strong>"RFC":</strong>
-  <%= @article.rfc%>
-</p>
-<p>
-  <strong>"Email":</strong>
-  <%= @article.email%>
-</p>
-<p>
-  <strong>"Usuario de contacto":</strong>
-  <%= @article.contactuser%>
+<p class="showalone">
+    <strong>Usuario de contacto:</strong>
+    <%= @article.contactuser%>
 </p>
 
-<% end %>
 
 <% if user_signed_in? %>
-<%= link_to 'Edit', edit_article_path(@article) %>
+<p class="show_btns">
+    <%= link_to 'Edit', edit_article_path(@article) %>
+</p>
 <% end %>
-<%= link_to 'Back', articles_path %>
+<p class="show_btns">
+    <%= link_to 'Back', articles_path %>
+</p>

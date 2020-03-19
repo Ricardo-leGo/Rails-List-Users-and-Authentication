@@ -18,14 +18,14 @@
         <% @newArr.each do |reference| %>
         <%if reference.email == article.contactuser%>
         <td><%= link_to article.contactuser , article_path(reference) %></td>
-       <%else%>
+        <%else%>
         <td><%= article.contactuser %></td>
-       <%end%>
-    <% end %>
-        <td><%= link_to 'Mostrar', article_path(article) %></td>
+        <%end%>
+        <% end %>
+        <td id="show"><%= link_to 'Mostrar', article_path(article) %></td>
         <% if user_signed_in? %>
-        <td><%= link_to 'Editar ', edit_article_path(article) %></td>
-        <td><%= link_to 'Eliminar', article_path(article),
+        <td id="edit"><%= link_to 'Editar ', edit_article_path(article) %></td>
+        <td id="delete"><%= link_to 'Eliminar', article_path(article),
             method: :delete,
             data: { confirm: '¿Estás segur@ de eliminiar al Usuario?' } %></td>
         <% end %>

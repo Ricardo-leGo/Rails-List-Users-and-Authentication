@@ -1,6 +1,9 @@
-
-<h1>Hello, Rails!</h1>
-<%= link_to 'Usuarios', controller: 'articles' %>
+<h1>Hola, Rails!</h1>
+<p id="usershome">
+    <%= link_to 'Usuarios', controller: 'articles' %>
+</p>
 <% if user_signed_in? %>
-<%= link_to 'Nuevo usuario', new_article_path %>
+<p>
+    <%= link_to 'Nuevo usuario', new_article_path  %>
+</p>
 <%end%>
