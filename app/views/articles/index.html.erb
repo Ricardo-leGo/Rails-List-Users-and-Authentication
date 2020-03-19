@@ -1,0 +1,36 @@
+<h1>Lista de Usuarios</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Nombre o razon Social</th>
+        <th>RFC</th>
+        <th>Email User</th>
+        <th>Email Contact</th>
+    </tr>
+    
+    <% @articles.each do |article| %>
+
+
+    <tr>
+        
+        <td><%= article.id %></td>
+        <td><%= article.title %></td>
+        <td><%= article.nrz %></td>
+        <td><%= article.rfc %></td>
+        <td><%= article.email %></td>
+        <% @newArr.each do |reference| %>
+        <%if reference.email == article.contactuser%>
+        <td><%= link_to article.contactuser , article_path(reference) %></td>
+       <%else%>
+        <td><%= article.contactuser %></td>
+       <%end%>
+    <% end %>
+        <td><%= link_to 'Mostrar', article_path(article) %></td>
+        <td><%= link_to 'Editar ', edit_article_path(article) %></td>
+        <td><%= link_to 'Eliminar', article_path(article),
+            method: :delete,
+            data: { confirm: '¿Estás segur@ de eliminiar al Usuario?' } %></td>
+    </tr>
+    <% end %>
+</table>

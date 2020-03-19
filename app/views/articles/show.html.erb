@@ -1,0 +1,56 @@
+<% debug @reference%>
+
+<%if !@reference== '' %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @reference.title%>
+</p>
+ 
+<p>
+  <strong>"Nombre o Razón Social":</strong>
+  <%= @reference.nrz%>
+</p>
+<p>
+  <strong>"RFC":</strong>
+  <%= @reference.rfc%>
+</p>
+<p>
+  <strong>"Email":</strong>
+  <%= @reference.email%>
+</p>
+<p>
+  <strong>"Usuario de contacto":</strong>
+  <%= @reference.contactuser%>
+</p>
+<% else %>
+<p>
+  <strong>Title:</strong>
+  <%= @article.title%>
+</p>
+ 
+<p>
+  <strong>"Nombre o Razón Social":</strong>
+  <%= @article.nrz%>
+</p>
+<p>
+  <strong>"RFC":</strong>
+  <%= @article.rfc%>
+</p>
+<p>
+  <strong>"Email":</strong>
+  <%= @article.email%>
+</p>
+<p>
+  <strong>"Usuario de contacto":</strong>
+  <%= @article.contactuser%>
+</p>
+
+<% end %>
+
+
+
+ 
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>

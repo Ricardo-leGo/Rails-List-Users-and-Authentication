@@ -1,0 +1,41 @@
+<p>
+  <strong>Title:</strong>
+  <%= @article.title%>
+</p>
+ 
+<p>
+  <strong>"Nombre o Razón Social":</strong>
+  <%= @article.nrz%>
+</p>
+<p>
+  <strong>"RFC":</strong>
+  <%= @article.rfc%>
+</p>
+<p>
+  <strong>"Email":</strong>
+  <%= @article.email%>
+</p>
+<p>
+  <strong>"Usuario de contacto":</strong>
+  <%= @article.contactuser%>
+</p>
+
+
+
+ 
+<h2>Add a comment:</h2>
+<%= form_for([@article, @article.comments.build]) do |f| %>
+  <p>
+    <%= f.label :commenter %><br>
+    <%= f.text_field :commenter %>
+  </p>
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>
